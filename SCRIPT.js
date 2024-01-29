@@ -1,7 +1,6 @@
 // fonciton mail
 
 
-
 // fonction jeu réecrite
 function lancerJeu(){
 
