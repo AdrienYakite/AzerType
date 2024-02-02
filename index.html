@@ -25,14 +25,11 @@
         <h1>AzerType</h1>
         <h2>L'application pour taper plus vite !</h2>
         <p> Azertype est une application en ligne pour apprendre à taper plus vite au clavier :)</p>
-        <br>
-        <br>
         </header>
 
         <main>
-            <div>
+            <section>
                 <h2>Voulez-vous taper des phrases ou des mots ?</h2>
-
                 <form method="get" action="">
                     <input type="radio" name="choixUser" id="mots" value="mots">
                     <label for="mots">Des mots</label>
@@ -41,32 +38,31 @@
                     <label for="phrases">Des phrases</label>
                     <br><br>
                 </form>
-            </div>
+            </section>
             
-            <div class="zoneJeu">
+            <section class="zoneJeu">
                 <h2>C'est parti !</h2>
+                    <div id="motPropose" class="motPropose"></div>
 
-                <div id="motPropose" class="motPropose">
-                    
-                </div>
+                    <div class="zoneJoueur">
+                        <input type="text" name="motUser" id="motUser" placeholder="Écrivez ici le mot ou la phrase proposé(e)" >
+                        <button id="boutonEnvoyer"> Envoyer </button>
+                    </div>
 
-                <div class="zoneJoueur">
-                    <input type="text" name="motUser" id="motUser" placeholder="Écrivez ici le mot ou la phrase proposé(e)" >
-                    <br><br>
-                    <button id="boutonEnvoyer"> Envoyer </button>
-                </div>
-            </div>
-
-            <div id="scoreEtPartage">
                 <h2>Votre score est de :</h2>
+                    <div id="scoreAffichage"></div>
+            </section>
+        </main>
 
-                <div id="scoreAffichage">
-                </div>
-            </div>
+        <footer>
+            <section>
+                <p>@Copyright : Adrien Yakite</p>
+                <p>Fait à Nice, le 13 Novembre 2023</p>
+            </section>
 
-                    <div class="formulaireScore">
-                    <legend>Partagez votre score avec un ami !</legend> 
-
+            <section class="formulaireScore">
+                <legend>Partagez votre score avec un ami !</legend> 
+    
                     <form id="formscore">
                         <label for="nomUser">Votre nom</label>
                         <input type="text" id="nomUser" name="nomUser" placeholder="Ex: Paul">
@@ -76,12 +72,6 @@
                         <br><br>
                         <button id="btnPartageScore" class="bouton" >Envoyer</button>
                     </form> 
-                    </div>
-                
-        </main>
-
-        <footer>
-            <p>@Copyright : Adrien Yakite</p>
-            <p>Fait à Nice, le 13 Novembre 2023</p>
+            </section>
         </footer>
     </body>

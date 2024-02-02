@@ -91,7 +91,6 @@ function gererFormulaire(scoreFinal){
         let resultatMail = validerEmail(email);
 
             if (resulatNom===true&&resultatMail===true){
-            // afficherEmail(user, email, scoreFinal);
                 console.log("Mail rédigé !");
             }else{
                 mailAmi.setAttribute("placeholder", "ATTENTION ! Champs vide!");
