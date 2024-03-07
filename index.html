@@ -30,11 +30,11 @@
         <main>
             <section>
                 <h2>Voulez-vous taper des phrases ou des mots ?</h2>
-                <form method="get" action="">
-                    <input type="radio" name="choixUser" id="mots" value="mots">
+                <form method="get" action="" required>
+                    <input type="radio" name="choixUser" id="mots" value="mots" required>
                     <label for="mots">Des mots</label>
 
-                    <input type="radio" name="choixUser" id="phrases" value="phrases">
+                    <input type="radio" name="choixUser" id="phrases" value="phrases" required>
                     <label for="phrases">Des phrases</label>
                     <br><br>
                 </form>
@@ -42,36 +42,40 @@
             
             <section class="zoneJeu">
                 <h2>C'est parti !</h2>
-                    <div id="motPropose" class="motPropose"></div>
+
+                    <div id="motPropose" class="motPropose">
+
+                    </div>
 
                     <div class="zoneJoueur">
                         <input type="text" name="motUser" id="motUser" placeholder="Écrivez ici le mot ou la phrase proposé(e)" >
-                        <button id="boutonEnvoyer"> Envoyer </button>
+                        <button id="boutonEnvoyer"> Vérifier </button>
                     </div>
+            </section>
 
+            <section>
                 <h2>Votre score est de :</h2>
-                    <div id="scoreAffichage"></div>
+                    <div id="scoreAffichage">
+                        
+                    </div>
             </section>
         </main>
 
+        
+                <form id="formscore">
+                    <h2>Partagez votre score avec un ami !</h2> 
+                    <label for="nomUser">Votre nom</label>
+                    <input type="text" id="nomUser" name="nomUser" placeholder="Ex: Paul" required>
+                    <br><br>
+                    <label for="mailAmi">Adresse mail de votre ami</label>
+                    <input type="text" id="mailAmi" name="mailAmi" placeholder="Ex : nom@gmail.com" required>
+                    <br><br>
+                    <button id="btnPartageScore" class="bouton" >Envoyer</button>
+                </form> 
+
+
         <footer>
-            <section>
                 <p>@Copyright : Adrien Yakite</p>
                 <p>Fait à Nice, le 13 Novembre 2023</p>
-            </section>
-
-            <section class="formulaireScore">
-                <legend>Partagez votre score avec un ami !</legend> 
-    
-                    <form id="formscore">
-                        <label for="nomUser">Votre nom</label>
-                        <input type="text" id="nomUser" name="nomUser" placeholder="Ex: Paul">
-                        <br><br>
-                        <label for="mailAmi">Adresse mail de votre ami</label>
-                        <input type="text" id="mailAmi" name="mailAmi" placeholder="Ex : nom@gmail.com">
-                        <br><br>
-                        <button id="btnPartageScore" class="bouton" >Envoyer</button>
-                    </form> 
-            </section>
         </footer>
     </body>

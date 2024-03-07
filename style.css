@@ -1,8 +1,12 @@
+/*//////////////////////////////////////////////////////////////////////////////////*/
+/*                                  BALISES                                         */
+/*//////////////////////////////////////////////////////////////////////////////////*/
 
 body{
     background-color: white;
     margin:0;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
     
 }
 
@@ -16,126 +20,38 @@ header {
 }
 
 main{
-    padding: 100px;
+    color: white;
+    background-color: salmon;
+    font-size: 1.1em;
+    text-align: center;
+
+    border: 1px salmon solid;
+    border-radius: 20px;
+    padding: 20px;
+    margin: auto;
+    margin-bottom: 100px;
+    width: 1000px;
+    height: 800px;
+
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 50px;
-    border-radius: 30px;
-    border: solid salmon 1px;
-    background-color: salmon;
-    margin: 100px;
-    color: white;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 
 }
 
 
-footer {
+footer{
     background-color: salmon;
     text-align: center;    
     padding: 50px;
     font-size: 1.1em;
     color: white;
-    border: 2px blue solid;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-
-
-    
-}
-
-footer section{
-    border: solid 2px yellow;
-}
-
-.formulaireScore{
-    background-color: salmon;
-    border: 2px red solid;
-    display: flex;
-    flex-direction: column;
-    margin-left: 300px;
-    margin-right: 300px;
-}
-
-.formulaireScore input{
-    
 
 }
 
 
-.bouton{
-    border-radius: 30px;
-    border: solid white 1px;
-    box-shadow: 6 6 0 rgba(0,0,0,0.7);
-    text-decoration: none;
-    color:salmon;
-    background-color: white;
-    padding: 10px;
-
-
-}
-
-.scoreEtPartage{
-    display: flex;
-    flex-direction: column  ;
-    gap: 200px;
-}
-
-input[type=text] {
-    height: 50px;
-    width: 375px;
-    border-radius: 30px;
-    border: solid white 1px;
-    text-align: center;
-}
-
-
-.motPropose{
-    border-radius: 40px;
-    background-color: white;
-    color: salmon;
-    text-align: center;
-    padding: 30px;
-    font-size: 2em;
-}
-
-.zoneJeu{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-
-.zoneJoueur{
-    display:flex;
-    flex-direction: row;
-    gap: 10px;
-}
-
-#scoreAffichage{
-    border-radius: 30px;
-    background-color: white;
-    color: salmon;
-    padding: 30px;
-    width: 200px;
-    
-}
-
-#monBouton{
-    border-radius: 40px;
-    border: solid salmon 1px;
-    background-color:salmon;
-    color:white;
-    padding: 15px;
-    width: 150px;
-}
-
-#monBouton:hover{
-    opacity: 0.8;
-    box-shadow: 3px 3px 0px rgba(0,0,0,0.7) ;
-}
 
 button{
     border-radius: 40px;
@@ -146,12 +62,137 @@ button{
     width: 100px;
 }
 
+
 button:hover{
     opacity: 0.8;
     box-shadow: 3px 3px 0px rgba(0,0,0,0.7) ;
 }
 
+h1{
+    font-size: 4em;
+}
+
+h2{
+    font-size: 1,5em;
+}
+
+input[type=text] {
+    height: 50px;
+    width: 375px;
+    border-radius: 20px;
+    border: solid white 1px;
+    text-align: center;
+}
+/*//////////////////////////////////////////////////////////////////////////////////*/
+/*                                  CLASSES ET IDs                                  */
+/*//////////////////////////////////////////////////////////////////////////////////*/
+
+
+.scoreEtPartage{
+    display: flex;
+    flex-direction: column  ;
+    gap: 200px;
+}
+
+#scoreAffichage{
+    border: salmon 1px solid;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+
+    margin: auto;
+    width: 300px;
+    padding: 30px;
+}
+
+.motPropose{
+    border: salmon 1px solid;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+
+    margin: auto;
+    width: 300px;
+    padding: 30px;
+    gap: 30px;
+}
+
+#motPropose input{
+    height: 400px;
+}
+
+
+
+.zoneJoueur{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}
+
+
+
+
+
 .error{
     border: solid 2px red;
     color : salmon;
 }
+
+#formscore{
+    color: white;
+    background-color: salmon;
+    font-size: 1.1em;
+
+    border: 1px salmon solid;
+    border-radius: 20px;
+    padding: 20px;
+    margin: auto;
+    margin-bottom: 100px;
+    width: 500px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#formscore input{
+    border: salmon 1px solid;
+}
+
+.msgEnvoiMail{
+    background-color: white;
+    text-align: center;
+    font-size: 2em;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////*/
+/*                                  ANIMATIONS                                      */
+/*//////////////////////////////////////////////////////////////////////////////////*/
+
+
+#formscore{
+    position: relative;
+    animation: bouton 1s ease-in-out infinite
+  }
+
+@keyframes bouton{
+    0% {
+        top: 0;
+      }
+      50% {
+          top: 10px;
+      }
+      100% {
+        top: 0;
+      }
+    
+  }
+
+/*//////////////////////////////////////////////////////////////////////////////////*/
+/*                                  MEDIA QUERIES                                   */
+/*//////////////////////////////////////////////////////////////////////////////////*/
+

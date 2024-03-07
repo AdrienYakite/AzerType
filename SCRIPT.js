@@ -37,24 +37,33 @@ for (let index = 0; index<listeDesBtnRadio.length; index++){
 
     boutonEnvoyer.addEventListener("click", ()=>{
     console.log(zoneEcriture.value);
-    if(zoneEcriture.value === listePropositions[i]){
-            scoreJoueur++;
-            i++; 
+    let btnRadio1 = document.getElementById("mots");
+    let btnRadio2 = document.getElementById("phrases");
 
-        }else{
-            i++; 
-        }
+    if(btnRadio1.checked || btnRadio2.checked){
+
+        if(zoneEcriture.value === listePropositions[i]){
+                scoreJoueur++;
+                i++; 
+
+            }else{
+                i++; 
+            }
 
 
-        if(listePropositions[i] === undefined){
-            afficherProposition("Fin du jeu !");
-            boutonEnvoyer.disabled = true;
+            if(listePropositions[i] === undefined){
+                afficherProposition("Fin du jeu !");
+                boutonEnvoyer.disabled = true;
 
-        }else{
-            afficherProposition(listePropositions[i]);
-        }
-        zoneEcriture.value = '';
-        afficherScore(scoreJoueur, (i));
+            }else{
+                afficherProposition(listePropositions[i]);
+            }
+            zoneEcriture.value = '';
+            afficherScore(scoreJoueur, (i));
+    }else{
+        alert("Des mots ou des phrases choisissez !")
+        console.log("Erreur rien n'est coché!")
+    }
     })
 
 // Gestion de l'événement submit sur le formulaire de partage du SCORE. 
@@ -74,8 +83,7 @@ gererFormulaire(scoreJoueur);
 
 function gererFormulaire(scoreFinal){
 
-    try{
-        let formScore = document.getElementById("formscore");
+    let formScore = document.getElementById("formscore");
         formScore.addEventListener("submit", (event)=>{
         event.preventDefault();
         let mailAmi = document.getElementById("mailAmi");
@@ -83,26 +91,13 @@ function gererFormulaire(scoreFinal){
 
         let nomUser = document.getElementById("nomUser");
         let user = nomUser.value;
-
-
-        console.log(user, email, scoreFinal);
         
-        let resulatNom = validerNom(user);
-        let resultatMail = validerEmail(email);
+        formScore.innerHTML=``;
+        formScore.classList.add("msgEnvoiMail")
+        formScore.innerHTML= ` Merci d'avoir joué  ${user}, votre score a bien été partagé à ${email} :)`
 
-            if (resulatNom===true&&resultatMail===true){
-                console.log("Mail rédigé !");
-            }else{
-                mailAmi.setAttribute("placeholder", "ATTENTION ! Champs vide!");
-                nomUser.setAttribute("placeholder", "ATTENTION ! Champs vide!");
-                console.log("Erreur format");
-            }
+
         });
-
-    }catch{
-        console.log("Erreur ! Quelque chose s'est mal passé :(")
-    }
-
     
 }
    
@@ -113,6 +108,8 @@ function afficherEmail(nom, adresseMail, score) {
     let mailto = `mailto:${adresseMail}?subject=Partage du score Azertype&body=Salut, je suis ${nom} et je viens de réaliser le score ${score} sur le site d'Azertype !`
     location.href = mailto
 }
+
+
 
 // fonction vérification champ vide ou non
 function verificationChamp(balise1, balise2){
@@ -165,7 +162,6 @@ function afficherScore(scoreJoueur,compteur){
     zoneAffichageDuScore.innerText = "Votre score est de : " + scoreJoueur + " / " + compteur;
 
 }
-
 
 
 
