@@ -6,34 +6,32 @@ function lancerJeu(){
 
 //récupération 
 let boutonEnvoyer = document.getElementById("boutonEnvoyer");
+let btnValiderRadios = document.getElementById("btnValiderRadios");
 let zoneEcriture = document.getElementById("motUser");
-let listeDesBtnRadio = document.querySelectorAll("input[type='radio']");
-console.log(listeDesBtnRadio);
 
 let choixUtilisateur = '';
 let i = 0;
 let scoreJoueur = 0;
 
-for (let index = 0; index<listeDesBtnRadio.length; index++){
+btnValiderRadios.addEventListener("click", (event)=>{
+    let btnRadioMots = document.getElementById("mots");
+    let btnRadioPhrases = document.getElementById("phrases");
 
-    listeDesBtnRadio[index].addEventListener("change", (event)=>{
-        choixUtilisateur = listeDesBtnRadio[index].value;
-        console.log(choixUtilisateur);
+    if(btnRadioMots.checked===true){
+        listePropositions = ["Adrien", "Floraison", "Guillotine", "Youtube","Choux", "Byslide"];
+        afficherProposition(listePropositions[i]);
+        console.log("Mots choisis")
+    }else{
+        listePropositions = ["Il pleuvra ce soir.", "Attention à la marche !", "Pierre qui roule n'amasse pas mousse...", "Rien ne se passe."];
+        afficherProposition(listePropositions[i]);
+        console.log("Phrases choisies");
+    }
+    event.preventDefault();
 
-        if (choixUtilisateur === "phrases"){
-            listePropositions = ["Il pleuvra ce soir.", "Attention à la marche !", "Pierre qui roule n'amasse pas mousse...", "Rien ne se passe."];
-            afficherProposition(listePropositions[i]);
-            console.log(listePropositions[i]);
-        } else {
-            listePropositions = ["Adrien", "Floraison", "Guillotine", "Youtube","Choux", "Byslide"];
-            afficherProposition(listePropositions[i]);
-            console.log(listePropositions[i]);
-        }
+})
 
-    })
-}
 
-    
+
 
     boutonEnvoyer.addEventListener("click", ()=>{
     console.log(zoneEcriture.value);
@@ -61,7 +59,7 @@ for (let index = 0; index<listeDesBtnRadio.length; index++){
             zoneEcriture.value = '';
             afficherScore(scoreJoueur, (i));
     }else{
-        alert("Des mots ou des phrases choisissez !")
+        alert("Veuillez choisir entre phrases ou mots")
         console.log("Erreur rien n'est coché!")
     }
     })
@@ -162,7 +160,6 @@ function afficherScore(scoreJoueur,compteur){
     zoneAffichageDuScore.innerText = "Votre score est de : " + scoreJoueur + " / " + compteur;
 
 }
-
 
 
 
